@@ -6,29 +6,35 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         // inventory.add("Jordan Breanna Arrington");
         boolean GO = true;
-        while
-        System.out.println("Welcome! What would you like to do? \n 1: Play \n 2: Display contents \n 3. Add \n 4: Remove \n 5: Previous \n 6: Skip \n 7: Shuffle \n 8: Exit");
-        int userInput = scan.nextInt();
-        if (userInput == 1)
-            System.out.println("1");
-        else if (userInput == 2)
-            System.out.println("2");
-        else if (userInput == 3) {
-            System.out.println("What do you want to add to the library");
-            scan = new Scanner(System.in);
-            String addition = scan.nextLine();
-            library.add(addition);
-            System.out.println(library);
+        while(GO) {
+            System.out.println("Welcome! What would you like to do? \n 1: Play \n 2: Display contents \n 3. Add \n 4: Remove \n 5: Previous \n 6: Skip \n 7: Shuffle \n 8: Exit");
+            int userInput = scan.nextInt();
+            if (userInput == 1)
+                System.out.println("1");
+            else if (userInput == 2)
+                System.out.println("2");
+            else if (userInput == 3) {
+                System.out.println("What do you want to add to the library");
+                scan = new Scanner(System.in);
+                String addition = scan.nextLine();
+                library.add(addition);
+                System.out.println(library);
+            }
+            else if (userInput == 4) {
+                System.out.println("What do you want to remove from the library");
+                scan = new Scanner(System.in);
+                String subtraction = scan.nextLine();
+                library.remove(subtraction);
+                System.out.println(library);
+            }
+            else if (userInput == 5)
+                System.out.println("5");
+            else if (userInput == 6)
+                System.out.println("6");
+            else if (userInput == 7)
+                System.out.println("7");
+            else if (userInput == 8)
+                System.out.println("8");
         }
-        else if (userInput == 4)
-            System.out.println("4");
-        else if (userInput == 5)
-            System.out.println("5");
-        else if (userInput == 6)
-            System.out.println("6");
-        else if (userInput == 7)
-            System.out.println("7");
-        else if (userInput == 8)
-            System.out.println("8");
     }
 }
