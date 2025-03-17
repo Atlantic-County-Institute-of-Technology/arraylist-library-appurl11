@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.*;
 public class Library {
     boolean playing = false;
     int current = 0;
@@ -24,21 +25,23 @@ public class Library {
     }
     public void skip() {
         if(!playing) {
-            System.out.println("Error: Song not playing, try 'Play'");
+            System.out.println("No song in queue to skip too, try another command");
         }
-        else if() {
-
+        else if(library.get(current+1) == null) {
+            System.out.println("Now playing: " + library.get(current-1));
         }
     }
     public void previous() {
         if(!playing) {
-            System.out.println("Error: Song not playing, try 'Play'");
+            System.out.println("No previous song detected, try another command");
         }
-        else if(!library.get(current-1) == null) {
+        else if(library.get(current-1) == null) {
             System.out.println("Now playing: " + library.get(current-1));
         }
     }
-
+    public void shuffle() {
+        Collections.shuffle(library);
+    }
 }
 
 
