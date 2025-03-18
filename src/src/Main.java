@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Library library = new Library();
+        library.initialLibrary();
         Scanner scan = new Scanner(System.in);
         boolean GO = true;
         while(GO) {
@@ -35,7 +36,6 @@ public class Main {
             }
             else if (userInput == 7) {
                 library.shuffle();
-                System.out.println("After Shuffling: " + library);
             }
             else if (userInput == 8) {
                 GO = false;

@@ -5,6 +5,16 @@ public class Library {
     int current = 0;
     ArrayList<String> library = new ArrayList<String>();
 
+    public void initialLibrary() {
+        library.add("Jordan Breanna Arrington");
+        library.add("Meow");
+        library.add("LALALA");
+        library.add("Genshin Impact");
+        library.add("Awooga");
+        library.add("Woof");
+
+    }
+
     public void add(String addition) {
         library.add(addition);
         }
@@ -40,6 +50,7 @@ public class Library {
         }
         else if(library.get(current+1) == null) {
             System.out.println("Now playing: " + library.get(current-1));
+            current++;
         }
     }
     public void previous(){
@@ -48,6 +59,7 @@ public class Library {
         }
         else if(library.get(current-1) == null) {
             System.out.println("Now playing: " + library.get(current-1));
+            current--;
         }
     }
     public void shuffle(){
