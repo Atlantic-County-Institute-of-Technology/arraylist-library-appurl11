@@ -2,9 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> library = new ArrayList<String>();
+        Library library = new Library();
         Scanner scan = new Scanner(System.in);
-        // inventory.add("Jordan Breanna Arrington");
         boolean GO = true;
         while(GO) {
             System.out.println("Welcome! What would you like to do? \n 1: Play \n 2: Display contents \n 3. Add \n 4: Remove \n 5: Previous \n 6: Skip \n 7: Shuffle \n 8: Exit");
@@ -14,7 +13,7 @@ public class Main {
             }
             else if (userInput == 2) {
                 System.out.println("These are the contents of library:");
-                System.out.println(library);
+                library.display();
             }
             else if (userInput == 3) {
                 System.out.println("What do you want to add to the library");
