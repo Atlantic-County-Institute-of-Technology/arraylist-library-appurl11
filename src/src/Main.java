@@ -6,8 +6,9 @@ public class Main {
         library.initialLibrary();
         Scanner scan = new Scanner(System.in);
         boolean GO = true;
+        // A loop that endlessly goes through asking the user what they want to do with the library
         while(GO) {
-            System.out.println("Welcome! What would you like to do? \n 1: Play \n 2: Display contents \n 3. Add \n 4: Remove \n 5: Previous \n 6: Skip \n 7: Shuffle \n 8: Exit");
+            System.out.println("Welcome! What would you like to do? \n 1: Play \n 2: Display contents \n 3. Add \n 4: Remove \n 5: Sort Alphabetically \n 6: Skip \n 7: Shuffle \n 8: Find an Item \n 9: Exit");
             int userInput = scan.nextInt();
             if (userInput == 1) {
                 library.play();
@@ -29,7 +30,7 @@ public class Main {
                 library.remove(subtraction);
             }
             else if (userInput == 5) {
-                library.previous();
+                library.sort();
             }
             else if (userInput == 6) {
                 library.skip();
@@ -38,7 +39,21 @@ public class Main {
                 library.shuffle();
             }
             else if (userInput == 8) {
+                scan = new Scanner(System.in);
+                System.out.println("What do you wanna look for?");
+                String find = scan.nextLine();
+                if (library.find(find) == -1) {
+                    System.out.println("Not found in library");
+                }
+                else {
+                    System.out.println(find + " is located at number " + library.find(find));
+                }
+            }
+            else if (userInput == 9) {
                 GO = false;
+            }
+            else {
+                System.out.println("Error: Incorrect input, please try again.");
             }
         }
     }
