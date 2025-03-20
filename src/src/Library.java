@@ -20,12 +20,11 @@ public class Library {
         }
 
     public void remove(String subtraction) {
-        for(int i = 0; i < library.size(); i++) {
-            if(library.get(i).contains(subtraction))
+            if(library.contains(subtraction)){
                 library.remove(subtraction);
-            else if(i == library.size()-1)
+            }
+            else {
                 System.out.println("Error: Wasn't included in the list, please try again.");
-
             }
         }
     public void play(){
@@ -37,6 +36,7 @@ public class Library {
         }
         else {
             System.out.println("Now playing " + library.get(0));
+            playing = true;
         }
     }
     public void display() {
@@ -48,7 +48,7 @@ public class Library {
         if(!playing) {
             System.out.println("No song in queue to skip too, try another command");
         }
-        else if(library.get(current+1) == null) {
+        else if(!(library.get(current+1) == null)) {
             System.out.println("Now playing: " + library.get(current-1));
             current++;
         }
